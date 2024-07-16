@@ -456,7 +456,7 @@ int ObAggregatedStore::fill_count(const int64_t row_count)
       ObAggCell *cell = agg_row_.at(i);
       ObStorageDatum datum; // as count(*) dont need to access data, datum is not used
       if (OB_FAIL(cell->eval(datum, row_count))) {
-        LOG_WARN("Failed to eval agg cell", K(ret), K(i), K(row), K(*cell));
+        LOG_WARN("Failed to eval agg cell", K(ret), K(i), K(*cell));
       }
     }
   }
